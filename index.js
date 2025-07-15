@@ -36,8 +36,6 @@ app.get("/api/progress/:userId/:lessonId", async (req, res) => {
         completed: false,
       });
     }
-
-    // Progress found, return stored values
     return res.status(200).json({
       userId: progress.userId,
       lessonId: progress.lessonId,
@@ -51,7 +49,6 @@ app.get("/api/progress/:userId/:lessonId", async (req, res) => {
   }
 });
 
-// Get all progress records for a user
 app.get("/api/progress/:userId", async (req, res) => {
   const { userId } = req.params;
   try {
@@ -62,9 +59,6 @@ app.get("/api/progress/:userId", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
-
-
-
 
 app.get("/", (req, res) => res.send("EduTracker Backend is Running 🚀"));
 
